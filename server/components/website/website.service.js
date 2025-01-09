@@ -1,19 +1,32 @@
+import { PrismaClient } from "@prisma/client";
+
+
 class WebsiteService {
     constructor() {
-        this.websites = [];
+        this.prisma = new PrismaClient();
     }
 
-    addWebsite = (website) => {
-        this.websites.push(website);
-        return website;
+    addWebsite = async (website) => {
+        console.log("Creating website ", website);
+        const { createdWebsite } = await this.prisma.website.create({ data: website });
+        console.log(createdWebsite);
+        return createdWebsite;
     };
 
-    getWebsites = () => this.websites;
+    getWebsites = () => this.prisma.website.findMany({
+        select: {
+            id: true,
+            url: true
+        }
+    })
 
-    getWebsite = (id) => {
-        const website = this.websites.find((u) => u.id === id);
-        return website;
-    };
+    getWebsite = (id) => this.prisma.website.findUnique({
+        where: { id },
+        select: {
+            id: true,
+            url: true
+        }
+    });
 }
 
 export default WebsiteService;

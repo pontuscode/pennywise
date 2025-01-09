@@ -1,23 +1,50 @@
-import Website from "./website.entities.js";
-
 
 class WebsiteController {
     constructor(websiteService) {
         this.websiteService = websiteService;
+        console.log("hallå?");
     }
 
-    createWebsite = (req, res) => {
-        const website = new Website(req.body.url);
-        return res.status(201).send(this.websiteService.addWebsite(website));
+    createWebsite = async (req, res) => {
+        console.log("tjena");
+        try {
+            const website = await this.websiteService.addWebsite(req.body);
+            return res.status(201).send(website);
+        } catch (error) {
+            return res.status(500).json({
+                message: "Internal server error",
+                error: error.message,
+                stack: error.stack
+            });
+        }
     }
 
-    getWebsites = (_req, res) => {
-        res.status(200).send(this.websiteService.getWebsites());
+    getWebsites = async (_req, res) => {
+        try {
+            const websites = await this.websiteService.getWebsites();
+            return res.status(200).send(websites);
+        } catch (error) {
+            console.log(error);
+            return res.status(500).json({
+                message: "Internal server error",
+                error: error.message,
+                stack: error.stack
+            });
+        }
     }
 
-    getWebsite = (req, res) => {
-        const { id } = req.params;
-        return res.status(200).send(this.websiteService.getWebsite(id));
+    getWebsite = async (req, res) => {
+        try {
+            const { id } = req.params;
+            const website = await this.websiteService.getWebsite(parseInt(id));
+            return res.status(200).send(website);
+        } catch (error) {
+            return res.status(500).json({
+                message: "Internal server error",
+                error: error.message,
+                stack: error.stack
+            });
+        }
     }
 }
 

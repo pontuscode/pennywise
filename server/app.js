@@ -7,4 +7,6 @@ const app = express();
 app.use(bodyParser.json());
 loadRoutes(app);
 
+console.log("Hej")
+
 export default app;
