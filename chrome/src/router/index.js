@@ -17,7 +17,12 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
     },
+    {
+      path: '/submit',
+      name: 'submit',
+      component: () => import('../views/SubmitView.vue'),
+    }
   ],
-})
+});
 
-export default router
+export default router;

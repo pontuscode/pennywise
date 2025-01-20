@@ -1,21 +1,14 @@
-<script setup lang="ts">
+<script setup>
 import { useWebsitesStore } from '@/stores/websites.store';
-import { ref } from 'vue';
-import { InputCreateWebsite } from '@/types/Website';
-
 const websitesStore = useWebsitesStore();
-
-async function createContainer() {
-  const input: InputCreateContainer = {
-    "room_uuid": selectedRoomId.value,
-    "name": containerName.value,
-    "description": containerDescription.value
-  }
-  const res = await containersStore.dispatchCreateContainer(input);
-}
-
 </script>
 
 <template>
-  <button>Hej</button>
+  <v-container fluid ma-0 pa-0>
+    <v-row align-content="center" justify="center">
+      <v-col cols="12" md="8" class="text-center">
+        This is the homepage.
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
