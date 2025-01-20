@@ -1,0 +1,12 @@
+{
+    "name": "Pennywise",
+    "version": "1.0.0",
+    "description": "Coupouns & promo codes",
+    "manifest_version": 3,
+    "author": "Pontus Jarnemyr",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "pennywise",
+        "default_icon": "Logo.png"
+    }
+}

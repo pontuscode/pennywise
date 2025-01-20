@@ -7,9 +7,7 @@ class WebsiteService {
     }
 
     addWebsite = async (website) => {
-        console.log("Creating website ", website);
         const { createdWebsite } = await this.prisma.website.create({ data: website });
-        console.log(createdWebsite);
         return createdWebsite;
     };
 

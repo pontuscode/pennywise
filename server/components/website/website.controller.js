@@ -2,11 +2,9 @@
 class WebsiteController {
     constructor(websiteService) {
         this.websiteService = websiteService;
-        console.log("hallå?");
     }
 
     createWebsite = async (req, res) => {
-        console.log("tjena");
         try {
             const website = await this.websiteService.addWebsite(req.body);
             return res.status(201).send(website);
