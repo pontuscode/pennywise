@@ -7,9 +7,10 @@ import App from './App.vue'
 import router from './router'
 
 // Vuetify
+import "@mdi/font/css/materialdesignicons.css" // Ensure you are using css-loader
+import { createVuetify } from "vuetify"
+
 import "vuetify/styles";
-import { createVuetify } from 'vuetify/lib/framework.mjs';
-// import * as components from "vuetify/components";
 import { VApp, VBottomNavigation, VBtn, VCol, VContainer, VIcon, VRow } from 'vuetify/lib/components/index.mjs';
 import * as directives from "vuetify/directives";
 
@@ -22,6 +23,9 @@ const vuetify = createVuetify({
         VContainer,
         VRow,
         VCol
+    },
+    icons: {
+        defaultSet: "mdi"
     },
     directives
 });
