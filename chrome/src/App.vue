@@ -7,7 +7,7 @@ import BottomNavBar from './components/BottomNavBar.vue';
 
   <div id="app">
     <v-app>
-      <v-container fluid ma-0 pa-0 fill-height>
+      <v-container fluid ma-0 pa-0 fill-height fill-width>
         <RouterView />
         <bottom-nav-bar></bottom-nav-bar>
       </v-container>
