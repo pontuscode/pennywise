@@ -1,4 +1,6 @@
-# pennywise_chrome
+# Pennywise (Chrome extension)
+
+<https://vuetifyjs.com/en/features/treeshaking/#automatic-treeshaking>
 
 This template should help get you started developing with Vue 3 in Vite.
 
