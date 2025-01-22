@@ -4,7 +4,8 @@
     "description": "Coupouns & promo codes",
     "manifest_version": 3,
     "permissions": [
-        "tabs"
+        "tabs",
+        "activeTab"
     ],
     "author": "Pontus Jarnemyr",
     "action": {
