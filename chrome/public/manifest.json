@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "Coupouns & promo codes",
     "manifest_version": 3,
+    "permissions": [
+        "tabs",
+        "activeTab"
+    ],
     "author": "Pontus Jarnemyr",
     "action": {
         "default_popup": "index.html",
