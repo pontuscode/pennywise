@@ -1,18 +1,20 @@
+import { Coupon } from "./Coupon";
+
 export type Website = {
     websiteId: string;
-    // coupons?: [Coupon];
+    coupons?: Coupon[];
     url: string;
 }
 
-export type InputCreateContainer = {
+export type InputCreateWebsite = {
     url: string;
-    promoCode: string;
+    coupon?: Coupon;
     description?: string;
 }
 
 
-export type InputUpdateContainer = {
+export type InputUpdateWebsite = {
     websiteId: string;
-    newPromoCode?: string;
+    newCoupon?: Coupon;
     newDescription?: string;
 }
