@@ -4,6 +4,7 @@
         v-model="code.value.value"
         :error-messages="code.errorMessage.value"
         label="Coupon/promo code"
+        clearable
       ></v-text-field>
 
       <v-text-field
@@ -18,10 +19,6 @@
         type="submit"
       >
         submit
-      </v-btn>
-
-      <v-btn @click="handleReset">
-        clear
       </v-btn>
     </form>
 </template>
@@ -58,7 +55,7 @@
   });
 
   const submit = handleSubmit(async (values) => {
-    alert(JSON.stringify(values, null, 2))
+    console.log("Submitting ", values);
     const input = {
         code: code.value.value,
         url: url.value.value
