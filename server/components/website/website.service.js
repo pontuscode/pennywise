@@ -7,7 +7,9 @@ class WebsiteService {
     }
 
     addWebsite = async (website) => {
+        console.log(website);
         const { createdWebsite } = await this.prisma.website.create({ data: website });
+        console.log(createdWebsite);
         return createdWebsite;
     };
 
@@ -23,6 +25,15 @@ class WebsiteService {
         select: {
             id: true,
             url: true
+        }
+    });
+
+    getCouponsForWebsite = (id) => this.prisma.coupon.findMany({
+        where: { websiteId: id },
+        select: {
+            id: true,
+            code: true,
+            website: true
         }
     });
 }
