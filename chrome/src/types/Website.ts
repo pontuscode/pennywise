@@ -2,7 +2,7 @@ import { Coupon } from "./Coupon";
 
 export type Website = {
     websiteId: string;
-    coupons?: Coupon[];
+    coupons?: [Coupon];
     url: string;
 }
 
