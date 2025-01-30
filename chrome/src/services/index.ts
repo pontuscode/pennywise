@@ -1,8 +1,8 @@
 import { websiteController } from "./websites.api";
-// import { containerController } from "./containers.api";
+import { couponController } from "./coupons.api";
 
 
 export const API = {
     websites: websiteController,
-    //containers: containerController
+    coupons: couponController
 }

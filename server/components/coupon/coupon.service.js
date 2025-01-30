@@ -8,7 +8,26 @@ class CouponService {
 
     addCoupon = async (coupon) => {
         console.log("Adding coupon", coupon);
-        const { createdCoupon } = await this.prisma.coupon.create({ data: coupon });
+        const website = await this.prisma.website.upsert({
+            where: {
+                url: coupon.url
+            },
+            update: {},
+            create: {
+                url: coupon.url
+            }
+        });
+        const createdCoupon = await this.prisma.coupon.create({
+            data: {
+                code: coupon.code,
+                website: {
+                    connect: {
+                        id: website.id
+                    }
+                }
+            }
+        });
+        console.log("Created coupon", createdCoupon);
         return createdCoupon;
     };
 

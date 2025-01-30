@@ -88,7 +88,7 @@ export const useWebsitesStore = defineStore("Websites", () => {
         }
     }
 
-    async function dispatchUpdateWebsite(input: InputUpdateWebsite): Promise<APIResponse<null>> {
+    /*async function dispatchUpdateWebsite(input: InputUpdateWebsite): Promise<APIResponse<null>> {
         try {
             const { status, data } = await API.websites.updateWebsite(input);
             if (status === 200) {
@@ -111,10 +111,10 @@ export const useWebsitesStore = defineStore("Websites", () => {
             content: null,
             status: 400
         }
-    }
+    }*/
 
 
-    async function dispatchDeleteWebsite(websiteId: string): Promise<APIResponse<null>> {
+    /*async function dispatchDeleteWebsite(websiteId: string): Promise<APIResponse<null>> {
         try {
             const { status } = await API.websites.deleteWebsite(websiteId);
             if (status === 200) {
@@ -137,7 +137,7 @@ export const useWebsitesStore = defineStore("Websites", () => {
             content: null,
             status: 400
         }
-    }
+    }*/
 
     return {
         websites,
@@ -145,7 +145,7 @@ export const useWebsitesStore = defineStore("Websites", () => {
         removeWebsite,
         dispatchCreateWebsite,
         dispatchGetWebsites,
-        dispatchUpdateWebsite,
-        dispatchDeleteWebsite
+        // dispatchUpdateWebsite,
+        // dispatchDeleteWebsite
     }
 })

@@ -11,7 +11,7 @@ import { createVuetify } from "vuetify";
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg';
 
 import "vuetify/styles";
-import { VApp, VBottomNavigation, VBtn, VCol, VContainer, VIcon, VRow } from 'vuetify/lib/components/index.mjs';
+import { VApp, VBottomNavigation, VBtn, VCol, VContainer, VIcon, VRow, VTextField } from 'vuetify/lib/components/index.mjs';
 
 const vuetify = createVuetify({
     components: {
@@ -21,7 +21,8 @@ const vuetify = createVuetify({
         VApp,
         VContainer,
         VRow,
-        VCol
+        VCol,
+        VTextField,
     },
     icons: {
         defaultSet: 'mdi',
