@@ -11,3 +11,7 @@ Browser extension for automatically finding coupons and promotion codes
 3. Load the extension into Chrome
     * Start Chrome, go to Settings > Manage extensions > Load unpacked > Load
       the `chrome/dist` directory
+
+## TODO
+
+1. Add snackbar for success/fail + progress when submitting new code
